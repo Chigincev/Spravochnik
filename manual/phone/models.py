@@ -7,9 +7,10 @@ class Persone(models.Model):
     def __str__(self):
         return self.name
 
-class Phone(models.Model):
+class Phones(models.Model):
     phone = models.CharField("Phone", max_length=50)
-    contact = models.ForeignKey(Persone, on_delete=models.CASCADE, related_name="phones")
+    contact = models.ForeignKey(
+        Persone, on_delete=models.CASCADE, related_name="phones")
 
     def __str__(self):
         return self.phone
